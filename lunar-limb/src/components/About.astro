@@ -1,0 +1,93 @@
+---
+import { Icon } from "astro-icon/components"
+---
+<section class="" id="about">
+    <div class="container">
+        <div class="container-item">
+            <div class="image-area">
+                <img src="../../public/images/profile.jpg" class="profileimg">
+            </div>
+        </div>
+        <div class="container-item">
+            <div class="profile-area">
+                <div class="introduction-area">
+                    <div class="text-area">
+                        <h2>About me</h2>
+                        <h4>Hello. I am <span>Naomi</span>.</h4>
+                        <p>I have worked as a software developer and web developer for six years, <br>
+                        participating in projects such as sales management systems and banking systems.<br>
+                        These experiences have taught me the importance of teamwork. 
+                        </p>
+                        <p>It is challenging and enjoyable for me to learn new technologies.</p>
+                        <p>I am familiar with <span>VB.Net, JavaScript, React and Node</span>.</p>
+                    </div>
+                    
+                    <div class="linkedin.svg">
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/nao-g-55822a2bb" target="blank"><Icon name="mdi:linkedin" size="50" /></img></a></li>
+                            <li><a href="https://github.com/naomiTak" target="blank"><Icon name="mdi:github" size="50" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    [data-icon] {
+        color: rgb(7, 16, 60);
+    }
+    
+    #about {
+        padding-top: 50px;
+    }
+    .container{
+        display: flex;
+        padding: 0 100px;
+    }
+    .container-item{
+        width: 50%;
+        padding: 30px 0;
+    }
+    .image-area, .profile-area{
+        display: flex;
+        justify-content: center;
+    }
+    .introduction-area{
+        width: 80%;
+    }
+    #about ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+    }
+    #about ul li {
+        margin: 0 10px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #about ul li:hover{
+        background-color: rgb(207, 206, 224);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+    }
+    #about ul li a {
+        color: rgb(7, 16, 60);
+        text-decoration: none;
+    }
+    .profileimg {
+        width: 70%;
+        height: 500px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -o-border-radius: 10px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+</style>

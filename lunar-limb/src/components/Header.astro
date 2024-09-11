@@ -1,20 +1,160 @@
-<header class="headertop">
-    <nav class="navbar navbar-expand-lg navbar-light bg-color">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link link-light" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link link-light" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link link-light" href="#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link link-light" href="#workExperiences">Work Experiences</a></li>
+<header class="header">
+    <div class="nav">
+        <nav class="nav_content">
+            <ul class="nav_list">
+                <li class="nav_item"><a href="#home">Home</a></li>
+                <li class="nav_item"><a href="#about">About</a></li>
+                <li class="nav_item"><a href="#work">Work</a></li>
+                <li class="nav_item"><a href="#profect">Project</a></li>
             </ul>
+        </nav>
+        <div class="humberger">
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+            <label for="drawer_input" class="drawer_open"><span></span></label>
         </div>
-    </nav>
+    </div>
 </header>
 
 <style>
+    header {
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+    }
+    .nav{
+        width: 100%;
+        display: flex;
+        background-color: rgba(0, 8, 46, 0.6);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    .nav_list{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+    }
+    .nav_item{
+        margin: 10px 0;
+        padding: 5px 0;
+    }
+    .nav_item a{
+        padding: 5px 10px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: white;
+    }
+    .nav_item a:hover{
+        background-color: rgba(21, 32, 83, 0.6);
+    }
+    .drawer_hidden {
+        display: none;
+    }
+    .drawer_open{
+        display: none;
+    }
+    .nav_content {
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 99;
+        background-color: rgba(0, 8, 46, 0.6);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    
+    @media screen and (max-width: 680px) {
+        .nav{
+            height: 60px;
+        }
+        .nav_content {
+            width: 100%;
+            left: 0;
+            /* height: 100%; */
+            position: absolute;
+            top: -50%;
+            padding-top: 60px;
+            /*left: 100%; /* メニューを画面の外に飛ばす */
+            z-index: 99;
+            background-color: rgba(0, 8, 46, 0.6);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: .5s;
+            text-align: center;
+        }
+        /* アイコンがクリックされたらメニューを表示 */
+        .nav_content.active {
+            /*left: 0;/* メニューを画面に入れる */
+            top: 0;
+        }
+        .nav_list{
+            display: block;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .humberger{
+            width: 10%;
+            top: 0;
+            right: 0;
+            position: absolute;
+        }
+        .drawer_open{
+            display: flex;
+            height: 60px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 100;/* 重なり順を一番上にする */
+            cursor: pointer;
+            }
+        /* ハンバーガーメニューのアイコン */
+        .drawer_open span,
+        .drawer_open span:before,
+        .drawer_open span:after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 25px;
+            border-radius: 3px;
+            background: white;
+            transition: 0.5s;
+            position: absolute;
+        }
 
+        /* 三本線の一番上の棒の位置調整 */
+        .drawer_open span:before {
+            bottom: 8px;
+        }
+
+        /* 三本線の一番下の棒の位置調整 */
+        .drawer_open span:after {
+            top: 8px;
+        }
+
+        /* アイコンがクリックされたら真ん中の線を透明にする */
+        .drawer_open.active span {
+            background: rgba(255, 255, 255, 0);
+        }
+        /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+        .drawer_open.active span::before {
+            bottom: 0;
+            transform: rotate(45deg);
+        }
+
+        .drawer_open.active span::after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+
+    }
 </style>
+
+<script>
+    document.querySelector('#drawer_input').addEventListener('change', function(){
+        document.querySelector('.drawer_open').classList.toggle('active');
+        document.querySelector('.nav_content').classList.toggle('active');
+    })
+</script>

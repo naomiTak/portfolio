@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<div  class="pagetop">
+    <a href="#home">
+        <Icon name="mdi:chevron-up" size="50" />
+    </a>
+</div>
+
+<style>
+    .pagetop {
+        height: 60px;
+        width: 60px;
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        color: rgb(7, 16, 60);
+        background: rgba(207, 206, 224, 0.6);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        text-decoration: none;
+        padding: 10px;
+    }
+    .pagetop [data-icon] {
+        font-size: 32px;
+    }
+    .pagetop:hover {
+        background: rgb(207, 206, 224);
+    }
+    .pagetop:hover [data-icon] {
+        background: linear-gradient(rgb(165, 207, 233), rgb(7, 16, 60));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+</style>

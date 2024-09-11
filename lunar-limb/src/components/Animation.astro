@@ -1,0 +1,45 @@
+<div class="ripples_animation">
+    <span class="animation__content ripples"></span>
+</div>
+
+<style>
+    .ripples_animation {
+        position: absolute;
+        top: 70%;
+        left: 30%;
+    }
+    .ripples_animation .ripples,
+    .ripples_animation .ripples:before,
+    .ripples_animation .ripples:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        animation: ripples 2s;
+        animation-fill-mode: forwards;
+    }
+    .ripples_animation .ripples:before,
+    .ripples_animation .ripples:after {
+    content: "";
+    }
+    .ripples_animation .ripples:before {
+    animation-delay: 0.25s;
+    }
+    .ripples_animation .ripples:after {
+    animation-delay: 0.5s;
+    }
+
+    @keyframes ripples {
+        0% {
+            width: 0;
+            height: 0;
+            border: 4px solid rgba(129, 177, 255, 0.8);
+        }
+        100% {
+            width: 700px;
+            height: 200px;
+            border: 4px solid rgba(120, 189, 120, 0);
+        }
+    }
+</style>
