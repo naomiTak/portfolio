@@ -22,6 +22,8 @@
         z-index: 2;
         margin: 0;
         padding: 0;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
     }
     .nav{
         width: 100%;
@@ -36,7 +38,7 @@
         margin: 0;
     }
     .nav_item{
-        margin: 10px 0;
+        margin: 10px;
         padding: 5px 0;
     }
     .nav_item a{
@@ -72,11 +74,9 @@
         .nav_content {
             width: 100%;
             left: 0;
-            /* height: 100%; */
             position: absolute;
-            top: -50%;
+            top: -420%;
             padding-top: 60px;
-            /*left: 100%; /* メニューを画面の外に飛ばす */
             z-index: 99;
             background-color: rgba(0, 8, 46, 0.6);
             backdrop-filter: blur(5px);
@@ -84,9 +84,7 @@
             transition: .5s;
             text-align: center;
         }
-        /* アイコンがクリックされたらメニューを表示 */
         .nav_content.active {
-            /*left: 0;/* メニューを画面に入れる */
             top: 0;
         }
         .nav_list{
@@ -107,10 +105,9 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            z-index: 100;/* 重なり順を一番上にする */
+            z-index: 100;
             cursor: pointer;
             }
-        /* ハンバーガーメニューのアイコン */
         .drawer_open span,
         .drawer_open span:before,
         .drawer_open span:after {
@@ -123,22 +120,18 @@
             transition: 0.5s;
             position: absolute;
         }
-
-        /* 三本線の一番上の棒の位置調整 */
         .drawer_open span:before {
             bottom: 8px;
         }
 
-        /* 三本線の一番下の棒の位置調整 */
         .drawer_open span:after {
             top: 8px;
         }
 
-        /* アイコンがクリックされたら真ん中の線を透明にする */
         .drawer_open.active span {
             background: rgba(255, 255, 255, 0);
         }
-        /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+
         .drawer_open.active span::before {
             bottom: 0;
             transform: rotate(45deg);
